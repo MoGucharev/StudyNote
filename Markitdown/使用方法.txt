@@ -1,0 +1,3 @@
+#文件使用方法
+markitdown 文件路径 -o 输出文件名.md
+两个路径均为绝对路径，如“C:\C:\Users\Lenovo\Desktop\报告.pdf”

@@ -1,0 +1,66 @@
+#public partial class NDebugAudioManager : Node
+-：Node类似于gdscript的extend，表示继承于谁
+-并且继承后能够使用节点自带的函数，如_Ready等
+-此脚本的变量都要写在此类里，否则会变为全局变量
+
+#[Export]
+-在编辑器可见
+
+#[GlobalClass]
+-在编辑器里全局可见，可以用在Resource等类型的文件上面
+
+#override
+-子类重写父类方法的关键字
+-说白了就是在用_Ready等节点有的虚语句时，需要先加上此关键字
+
+#GetNode<>()
+-获取子节点，<>内为变量类型，括号中为子节点名称
+-和unity中用法相似
+
+#OfType
+-选出指定的类型，可以是godot中引擎自带的类型，不能是class_name在命名的类型（因为引擎通过绑定让C#可以识别出类型）
+-只能识别C#里的类型
+-语法：OfType<T>
+
+#Callable.From
+-将指定C#方法转换为godot中能够读取的储存方法的Callable类型
+
+#Connect连接信号
+-格式：所指向节点.Connect(信号属于哪个类型.SignalName.信号名称,所要绑定的函数)
+-无法直接用godot中的语句进行绑定，需要用Callable进行转换，eg：        Callable callable = Callable.From(() => { GD.Print("111"); });
+-也可以像事件一样，使用变量名.信号名 += 要执行的函数；比如button.Pressed += onPressed();
+
+# ArgumentNullException.ThrowIfNull()
+-检测参数是否为nulll
+-有两个参数，第一个为要检测的，第二个参数为string类型，表示检测为null时抛出的语句
+
+#IFormatProvider
+-帮助完成本地化的类型，会识别机器的本地化码，自动转换符号，比如有些国家会把逗号当作小数点，此功能会自动适配
+
+#在C#中用gdscript语言
+-要用GD当作前缀，且方法的首字母为大写
+-格式：GD.
+eg:GD.Print
+
+#代码结构
+##内部使用结构
+public partial class NDebugAudioManager : Node
+{
+	private struct PlayingSound
+	{
+		public int id;
+         }
+}
+表示在类的内部使用的结构
+
+#性能的考虑
+##HashSet
+-使用多次查找的类型时，应该用HashSet<T>，HashSet查找快，不重复，省性能
+
+#Godot和C#区别
+-C#编写时，无法用C#语言的语法来使用Godot内的变量，比如事件+=callable就是错误的，因为callable在C#中不存在
+
+#命名
+-Godot引擎想使用C#文件，必须要求C#文件名和C#中继承godot节点的类的名称完全一致
+-如果C#想获得另一个节点中脚本里的方法，在命名节点变量时，需要将类型写为脚本的class名称
+如：节点名称为test，挂载脚本的类名称为Test，则另一个脚本调用时，要写private Test 名称；

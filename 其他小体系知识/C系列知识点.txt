@@ -1,0 +1,4 @@
+#.NET
+-.NET Framework是老windows里用的，只能在win上用，现在不推荐使用
+-.NET Core是过渡版本，支持跨平台
+-.NET 是现代版，更好用
