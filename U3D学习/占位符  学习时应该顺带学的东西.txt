@@ -1,0 +1,1 @@
+1Unity是如何储存类似godot.log的报错日志的？
