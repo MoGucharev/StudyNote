@@ -69,3 +69,8 @@ TP：怪不得项目把各自同类型的文件放在一起，这样统一化地
 ###重要
 STS2有一套自己的启动顺序代码，看思维导图
 
+#组合优于继承。
+-组合的核心是interface
+-比如共有数据data和在data下演变出来的dataa和datab。用组合的方法，是创建一个interface Ia，在data里创建一个Ia类型变量
+把将dataa和datab独有的部分写进一个继承Ia协议的类里，创建时，将dataa或datab填入Ia，调用时从Ia变量里直接获取独特的类型
+

@@ -1,0 +1,43 @@
+account
+交易的记录方式
+
+debit/credit balance
+借方/贷方余额
+
+asset
+资产
+
+expense
+费用
+
+liabilities
+负债
+
+stockholder
+所有者权益
+
+revenue
+收益
+
+common stock
+普通股，即公司里股东占有的股票
+
+income Statement
+利润表
+
+dividends
+股利，即结算时分给股东的股利
+包括两个阶段
+阶段一：declare，宣告。此时董事会只是宣布要给股东发红利，这时相当于欠股东的钱。所有者权益减少，负债增加。
+阶段二：Dividend Payment，支付。此时才真的将现金交给股东。负债减少，资产减少。
+
+retained earning
+期初留存收益
+
+ownership structural
+所有者结构
+比如：独资企业（1个人），合伙企业（多个人），公司（有股票的）
+
+type of account that are a part of equity section
+它影响了所有者权益部分的账户类型
+比如独资企业不会有common stock
